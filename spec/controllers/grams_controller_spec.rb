@@ -26,5 +26,16 @@ RSpec.describe GramsController, type: :controller do
       gram = Gram.last
       expect(gram.message).to eq("Hello!")
     end
+
+    #prevents blank grams from entering db
+    it "should properly deal with validation errors" do
+      #triggers httpp post request but leaves blank string in message to test?
+      #this is for create action in grams controller
+      post :create, params: { gram: { message: ''}}
+      #HTTP status should be unprocessable_entity
+      expect(response).to have_http_status(:unprocessable_entity)
+      #The grams should be zero
+      expect(Gram.count).to eq 0
+    end
   end
 end

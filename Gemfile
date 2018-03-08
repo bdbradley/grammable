@@ -9,6 +9,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
 end
 
+gem 'devise'
+
 gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.6'
