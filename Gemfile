@@ -11,7 +11,13 @@ end
 
 gem 'devise'
 
+gem "fog-aws"
+
+gem "figaro"
+
 gem "factory_bot_rails"
+
+gem 'carrierwave', '~> 1.0'
 
 gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
